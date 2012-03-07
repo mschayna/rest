@@ -1,0 +1,28 @@
+
+Jersey REST server proof-of-concept
+
+/rest/application.wadl
+	generated WADL definition file
+
+/rest/projects
+	GET: list of all projects
+	PUT: create new project
+
+/rest/projects/1
+	GET: get project 1
+	POST: update project 1
+	DELETE: delete project 1
+
+/rest/projects/1/timerecords
+	GET: list of timerecords of project 1
+	PUT: create new timerecord for project 1
+
+/rest/projects/1/timerecords/2
+	GET: get timerecord 2
+	POST: update timerecord 2
+	DELETE: delete timerecord 2
+
+/rest/timerecords
+	GET: list of all timerecords
+	PUT: create new timerecord
+
