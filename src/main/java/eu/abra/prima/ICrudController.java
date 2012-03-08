@@ -1,6 +1,5 @@
 package eu.abra.prima;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -15,8 +14,10 @@ import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.api.JResponse;
 
+import eu.abra.prima.beans.CrudObject;
+
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-public interface ICrudController<T extends Serializable> {
+public interface ICrudController<T extends CrudObject<T>> {
 
 	// Result must be wrapped by JResponse bucket due lack of serialization of
 	// unknown generic types, this is Jersey specific class similar to JAX-RS 

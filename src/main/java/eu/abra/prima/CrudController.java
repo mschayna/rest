@@ -1,12 +1,13 @@
 package eu.abra.prima;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.sun.jersey.api.JResponse;
 
-public abstract class CrudController<T extends Serializable> implements ICrudController<T> {
+import eu.abra.prima.beans.CrudObject;
+
+public abstract class CrudController<T extends CrudObject<T>> implements ICrudController<T> {
 
 	protected abstract T newObject();
 	
