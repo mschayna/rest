@@ -18,6 +18,9 @@ import com.sun.jersey.api.JResponse;
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 public interface ICrudController<T extends Serializable> {
 
+	// Result must be wrapped by JResponse bucket due lack of serialization of
+	// unknown generic types, this is Jersey specific class similar to JAX-RS 
+	// GenericEntity class.   
 	@GET
 	JResponse<List<T>> list();
 	
