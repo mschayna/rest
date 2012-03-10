@@ -15,7 +15,6 @@ public abstract class CrudController<T extends CrudObject<T>> implements ICrudCo
 	public JResponse<List<T>> list() {
 		List<T> list = new ArrayList<T>();
 		list.add(newObject());
-		//sd
 		list.add(newObject());
 		list.add(newObject());
 		return JResponse.ok(list).build();
