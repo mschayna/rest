@@ -11,11 +11,15 @@
 			<param-name>com.sun.jersey.config.property.packages</param-name>
 			<param-value>eu.abra.prima</param-value>
 		</init-param>
-		<load-on-startup>1</load-on-startup>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.MediaTypeMappings</param-name>
 			<param-value>json : application/json, xml : application/xml</param-value>
 		</init-param>
+		<init-param>
+    		<param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
+    		<param-value>eu.abra.prima.filters.RewritingFilter</param-value>
+  		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Jersey Web Application</servlet-name>
