@@ -3,9 +3,13 @@ package eu.abra.prima;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
 import com.sun.jersey.api.JResponse;
 
 import eu.abra.prima.beans.CrudObject;
+import eu.abra.prima.exceptions.CrudException;
 
 public abstract class CrudController<T extends CrudObject<T>> implements ICrudController<T> {
 
@@ -37,5 +41,11 @@ public abstract class CrudController<T extends CrudObject<T>> implements ICrudCo
 	@Override
 	public T post(String id, T object) {
 		return object;
+	}
+	
+	@Path("/error")
+	@GET
+	public T error() throws CrudException {
+		throw new CrudException("Error in error method.");
 	}
 }
